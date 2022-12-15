@@ -1,6 +1,6 @@
 namespace C__Learning_Linq
 {
-    public class book
+    public class Book
     {
         public string? Title { get; set; }
         public int PageCount { get; set; }

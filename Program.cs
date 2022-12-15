@@ -1,2 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using C__Learning_Linq;
+
+LinqQueries queries = new LinqQueries();
+
+queries.printBooks();
