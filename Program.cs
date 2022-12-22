@@ -2,4 +2,11 @@
 
 LinqQueries queries = new LinqQueries();
 
-queries.printBooks();
+// All the books
+//queries.printBooks();
+
+//Books after 2000
+//queries.BooksAfter2000();
+
+//Books with more than 250 pages and title in Action
+queries.BooksAfterWith250PagesandTitle();
