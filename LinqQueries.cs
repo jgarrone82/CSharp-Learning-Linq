@@ -46,6 +46,26 @@ namespace C__Learning_Linq
         printQueryResult(result);
     }
 
+    public bool AllTheBooksStatus ()
+    {
+        return booksList.All(x => x.Status!= string.Empty);
+    }
+    public bool AnyBooksPublished2005 ()
+    {
+        return booksList.Any(x => x.PublishedDate.Year == 2005);
+    }
+
+    public void BooksContains()
+    {
+    // extension method
+    List<Book> result = booksList.Where(b => b.Categories.Contains("Python")).ToList();
+
+    // query expression
+    //List<Book> result = (List<Book>)(from b in booksList where b.Categories.Contains("Python") select b);
+
+    printQueryResult(result);
+    }
+
      public void printQueryResult(List<Book> result)
     {
         Console.WriteLine("{0, -60} {1, 15} {2, 15}\n", "Title", "Pages", "Published");
