@@ -55,13 +55,20 @@ namespace C__Learning_Linq
         return booksList.Any(x => x.PublishedDate.Year == 2005);
     }
 
-    public void BooksContains()
+    public void BooksContains(string categories)
     {
     // extension method
-    List<Book> result = booksList.Where(b => b.Categories.Contains("Python")).ToList();
+    List<Book> result = booksList.Where(b => b.Categories != null && b.Categories.Contains(categories)).OrderBy(x => x.Title).ToList();
 
     // query expression
     //List<Book> result = (List<Book>)(from b in booksList where b.Categories.Contains("Python") select b);
+
+    printQueryResult(result);
+    }
+
+    public void BooksContainsAndFilterPages(int pages)
+    {
+    List<Book> result = booksList.Where(b => b.PageCount > pages).OrderByDescending(x => x.PageCount).ToList();
 
     printQueryResult(result);
     }

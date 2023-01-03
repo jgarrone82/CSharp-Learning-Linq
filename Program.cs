@@ -18,4 +18,10 @@ LinqQueries queries = new LinqQueries();
 //Console.WriteLine($"Is there any book published in 2005? {queries.AnyBooksPublished2005()}");
 
 //Books Contains the word python
-queries.BooksContains();
+//queries.BooksContains("Python");
+
+//Books Contains the word Java and order by title
+//queries.BooksContains("Java");
+
+//Books Contains more than 450 pages and in descending order
+queries.BooksContainsAndFilterPages(450);
